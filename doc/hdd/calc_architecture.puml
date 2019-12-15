@@ -1,0 +1,20 @@
+@startuml
+
+component AST
+component Lexer
+component Calc
+component Parser
+
+interface CParser
+interface ILexer
+interface INode
+
+CParser - Parser
+ILexer - Lexer
+INode - AST
+
+Parser --> ILexer : use
+Parser --> INode : use
+Calc --> CParser : use
+
+@enduml

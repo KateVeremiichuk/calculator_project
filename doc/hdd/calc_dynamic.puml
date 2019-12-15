@@ -1,0 +1,28 @@
+@startuml
+
+participant Calc
+participant Lexer.CLexer
+participant Parser.CParser
+participant AST.INode
+
+loop while input
+    Calc -> Calc : readLine()
+
+    Calc -> Lexer.CLexer ** : create(expr)
+    Calc -> Parser.CParser ** : create(lexer)
+
+    Calc -> Parser.CParser : parse()
+    activate Parser.CParser
+        Parser.CParser -> AST.INode ** : create()
+        Calc <-- Parser.CParser : node
+    deactivate Parser.CParser
+
+    Calc -> AST.INode : eval()
+    activate AST.INode
+        Calc <-- AST.INode : value
+    deactivate AST.INode
+
+    Calc -> Calc : printValue()
+end
+
+@enduml
