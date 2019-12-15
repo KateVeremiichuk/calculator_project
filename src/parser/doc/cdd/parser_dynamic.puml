@@ -1,0 +1,20 @@
+@startuml
+
+participant Calc
+participant CParser
+participant AST.Node
+
+Calc -> CParser ** : create(lexer)
+Calc -> CParser : parse()
+
+activate CParser
+    CParser -> AST.Node ** : create()
+    Calc <-- CParser : node
+deactivate CParser
+
+Calc -> AST.Node : eval()
+activate AST.Node
+    Calc <-- AST.Node : value
+deactivate AST.Node
+
+@enduml
