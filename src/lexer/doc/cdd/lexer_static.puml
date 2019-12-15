@@ -1,0 +1,21 @@
+@startuml
+
+class Token {
+    + id : TokenId
+    + text : string
+}
+
+interface ILexer {
+    + {abstract} nextToken() : Token
+}
+
+class CLexer {
+    + CLexer(const string &expr)
+    + nextToken() : Token
+    - m_expr : const string &
+    - m_pos : size_t
+}
+
+CLexer --|> ILexer
+
+@enduml

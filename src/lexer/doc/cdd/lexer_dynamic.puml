@@ -1,0 +1,16 @@
+@startuml
+
+participant Calc
+participant CLexer
+participant Parser.CParser
+
+Calc -> CLexer ** : create(expr)
+
+loop
+    Parser.CParser -> CLexer : nextToken()
+    activate CLexer
+        Parser.CParser <-- CLexer : token
+    deactivate CLexer
+end
+
+@enduml
