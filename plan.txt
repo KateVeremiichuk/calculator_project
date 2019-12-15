@@ -1,0 +1,41 @@
+===== Requirements Design =====
+
+* PRS (Project Requirements Specification)
+* Grammar
+
+===== System Design =====
+
+OUT OF SCOPE
+
+===== Architecture Design =====
+
+HDD (High-level Domain Design):
+* Static diagram
+* Dynamic diagram
+
+===== Component Design =====
+
+CDD (Component Detailed Design):
+* Lexer
+* Parser
+* AST (Abstarct Syntax Tree)
+
+===== Coding =====
+
+* Well, actual coding
+
+===== Unit testing =====
+
+* tests for each unit
+
+===== Integration test =====
+
+* just do it
+
+===== System testing =====
+
+OUT OF SCOPE
+
+===== Acceptance test =====
+
+Demo
