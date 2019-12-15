@@ -1,0 +1,22 @@
+@startuml
+
+class CParser
+{
+    + CParser(lexer : unique_ptr<ILexer>)
+    + parse() : unique_ptr<AST::INode>
+
+    - getToken()
+    - check(id : Lexer::TokenId) : bool
+    - accept(id : Lexer::TokenId) : bool
+
+    - addSub()
+    - mulDiv()
+    - power()
+    - unary()
+    - term()
+
+    - m_lexer : unique_ptr<ILexer>
+    - m_token : Lexer::Token
+}
+
+@enduml
