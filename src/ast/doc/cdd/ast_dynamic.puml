@@ -1,0 +1,20 @@
+@startuml
+
+participant TNode
+participant Parser.CParser
+participant Calc
+
+loop
+    Parser.CParser -> TNode : create()
+end
+
+...
+
+Calc -> TNode : eval()
+activate TNode
+    group recurse
+        TNode -> TNode : eval
+    end
+deactivate TNode
+
+@enduml

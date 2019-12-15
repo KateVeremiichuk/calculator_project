@@ -1,0 +1,15 @@
+@startuml
+
+interface INode {
+    + {abstract} eval() : double
+}
+
+class TNode {
+    + eval() : double
+    - m_body : function
+    - m_child_nodes : array<unique_ptr<INode>>
+}
+
+TNode --|> INode
+
+@enduml
